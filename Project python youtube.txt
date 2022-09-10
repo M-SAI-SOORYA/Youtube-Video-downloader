@@ -1,0 +1,21 @@
+from pytube import YouTube
+#Copy YOUtube video URL and paste it here
+link='https://www.youtube.com/watch?v=_vktceH8ZA0'
+y=YouTube(link)
+#YOU will get title the youtube video
+print(y.title)
+print()
+#YOU can check
+print('Check the thumbnail by clicking here:--->',y.thumbnail_url)
+print()
+
+video=y.streams.all()
+l=list(enumerate(video))
+for i in l:
+    print(i)
+print()
+# Enter the index at the starting of brackets like 0, 1, 2.........
+strm=int(input('Enter the index number for which type video you want: '))
+video[strm].download()
+#the video will downloaded and you can 
+print('Downloaded Successfully')
